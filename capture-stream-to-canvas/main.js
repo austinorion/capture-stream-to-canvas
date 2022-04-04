@@ -4,11 +4,8 @@ const startButton = document.getElementById('startButton');
 
 startButton.addEventListener('click', () => {
     let stream;
-    const fps = 0;
     if (leftVideo.captureStream) {
-      stream = leftVideo.captureStream(fps);
-    } else if (leftVideo.mozCaptureStream) {
-      stream = leftVideo.mozCaptureStream(fps);
+      stream = leftVideo.captureStream();
     } else {
       console.error('Stream capture is not supported');
       stream = null;
